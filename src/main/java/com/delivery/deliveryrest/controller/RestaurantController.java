@@ -29,7 +29,6 @@ public class RestaurantController {
 	
 	@PostMapping("/api/restaurants")
 	void post(@RequestBody RestaurantDto dto) {
-		System.out.println(dto.getName());
 		Restaurant restaurant = modelMapper.map(dto, Restaurant.class);
 		repository.save(restaurant);
 	}

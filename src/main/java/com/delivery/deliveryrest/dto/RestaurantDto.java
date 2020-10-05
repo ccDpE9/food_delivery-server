@@ -12,5 +12,4 @@ public class RestaurantDto {
 	private int deliveryTime;
 	private double deliveryPrice;
 	private String category;
-
 }
