@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.PrePersist;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,6 +29,8 @@ public class Restaurant {
 	
 	@Column(unique = true)
 	private String name;
+	@Column(unique = true)
+	private String slug;
 	private String description;
 	private double minimalDelivery;
 	private int deliveryTime;
@@ -40,6 +43,11 @@ public class Restaurant {
 		orphanRemoval = true
 	)
 	private List<Meal> meals = new ArrayList<>();
+	
+	@PrePersist
+	private void slugify() {
+		slug = name.toLowerCase().replace(" ", "_");
+	}
 	
 	public void addMeal(Meal meal) {
 		meals.add(meal);
