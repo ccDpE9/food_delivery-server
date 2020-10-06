@@ -7,6 +7,7 @@ import lombok.Setter;
 @Setter
 public class RestaurantDto {
 	private String name;
+	private String slug;
 	private String description;
 	private double minimalDelivery;
 	private int deliveryTime;

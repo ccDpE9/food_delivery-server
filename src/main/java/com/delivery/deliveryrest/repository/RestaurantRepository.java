@@ -8,4 +8,5 @@ import com.delivery.deliveryrest.domain.Restaurant;
 @Repository
 public interface RestaurantRepository extends CrudRepository<Restaurant, Long> {
 	Restaurant findByName(String name);
+	Restaurant findBySlug(String slug);
 }
