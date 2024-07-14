@@ -16,7 +16,6 @@ import lombok.Data;
 public class Meal {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(insertable = true)
 	private Long id;
 
 	private String name;
